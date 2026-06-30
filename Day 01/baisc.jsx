@@ -11,3 +11,4 @@
 // the browser so the website things by the DOM reacts do a thing reacts create a duplicate of that website virtual dom
 //let suppose user like a post only that like button color and counts increase so react analysis the old dom which is unliked
 //and new chages , now react reflect only the changes part on the main browser instead of reloading whole website
+///this process is called recauncination
