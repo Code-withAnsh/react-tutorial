@@ -12,7 +12,7 @@ const Twowaybinding2 = () => {
 //   }; //ab humne pure changehandler ko comment kiya aur usko utha ke hum onchange me daal denge
 //yaad hai aisa kuch kar chuke hai pahle bhi
   const [fullName, setfullName] = useState(" ");
-  const [age,setage]  = useState();
+  const [age,setage]  = useState('');
   const [users,setUsers] = useState([])//usestate me blank array isliye banaya jiss se aage chalke
   //isi me sara data add ho kisme hoga setUsers me aur save hoga users me setUsers me new data 
  const submitHandler = (e)=>{
