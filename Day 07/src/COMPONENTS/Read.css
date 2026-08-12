@@ -1,0 +1,8 @@
+/* h1{
+    color: green;
+} */
+
+/* BEM -- blog element identifier pahle jo div hai uska naam then wo kar kya rha then wo kiska hai */
+ .read_list_heading{
+    color: red;
+ }
