@@ -1,0 +1,74 @@
+import { useContext, useState } from "react";
+import { Fragment } from "react";
+import { nanoid } from "nanoid";
+import './Read.css'
+import { toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import { todocontext } from "../Wrapper";
+const Read = () => {
+// step4
+const [Todos,setTodos] = useContext(todocontext) //step 6 -- ab maine todos le aaya 
+// console.log(s);
+// ab agar jake console per dekhoge toh hello print ho chuka hoga
+//socho ab wrapper ka child tha app aur app ka child tha read aur humne bina props
+//ke wrapper ka data utha ke yaha daal diya 
+//ab hum sab jagah se props hata denge ab jao tum app.jsx me jo const todo
+//wala main data hai jo sab jagah travel karana hai usko app se hata ke wrap me daal do
+  const deletestyle = {
+    padding: "1px",
+    marginLeft: '1reman'
+  };
+const deleteHandler = (id) =>{
+  const filteredTodo = Todos.filter((khudkiId)=> khudkiId.id!=id)
+  setTodos(filteredTodo)
+  toast.error('Todo deleted!')
+}
+const completeHandler = (id) =>{
+  const updatTodos= Todos.map((todo)=>
+  todo.id === id ?{...todo,isCompleted:!todo.isCompleted}:todo);
+
+  setTodos(updatTodos)
+  toast.success('Todo updated!')
+}
+
+  const renderTodos = Todos.map((todo) => {
+    return (
+      <>
+      <li
+        style={{ color: todo.isCompleted ? "lightgreen" : "tomato" }}
+        key={todo.id}
+        className="flex mb-3 justify-between item-center p-3 bg-gray-900 rounded wrap-anywhere"
+      >
+        <span className="text-xl font-thin">{todo.title}</span>
+        <div className="flex justif-between gap-5">
+          <button
+            className="pl-3 pr-3 text-red-400 text-sm border rounded text-2xl font-thin "
+            onClick={() => deleteHandler(todo.id)}
+          >
+            Delete
+          </button>
+          <button className="text-2xl border p-1 rounded text-green-500"
+          onClick={()=>completeHandler(todo.id)}>
+            Completed
+          </button>
+        </div>
+
+        
+      </li>
+      </>
+    );
+
+  });
+
+// why error i
+  return (
+    <div className="w-[40%] text-4xl">
+      <h1 className="mb-10 text-5xl font-thin">
+        <span className="text-pink-500">Pending </span> Todos:
+      </h1>
+      <ol>{renderTodos}</ol>
+    </div>
+  );
+};
+
+export default Read;
