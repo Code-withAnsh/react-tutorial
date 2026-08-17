@@ -10,3 +10,9 @@ const App = () => {
 }
 export default App //ab isko dekho humne export kiya aur main me jake dekho ye import kiya gya hai
 
+//hum aur bhi cheeze export karte hai but ab default nhi const ke saath
+export const x =  'hello'
+export const y = "world";
+//dekho wo App boilerplate ke sath hi imported tha isko chalo karte hai khud se import main me
+
+

@@ -21,19 +21,22 @@ const deleteHandler = (id) =>{
   ///jo false hoga use delete kar dega
   setTodos(filteredTodo)
 }
+
   const renderTodos = Todos.map((todo) => {
     return (
       <li
+        // style={{ color: todo.isCompleted ? "green" : "tomato" }}
         key={todo.id}
-        className="flex mb-3 justify-between item-center p-3 bg-gray-900 rounded"
+        className="flex mb-3 justify-between item-center p-3 bg-gray-900 rounded wrap-anywhere"
       >
         <span className="text-xl font-thin">{todo.title}</span>
         <button
-          className="p-1 text-red-400 text-sm border rounded text-2xl ml-5 font-thin"
+          className="p-1 text-red-400 text-sm border rounded text-2xl ml-5 font-thin "
           onClick={() => deleteHandler(todo.id)}
         >
           Delete
         </button>
+
 
         {/* //step 1 -- humne kisi task ke aage wale delete btn per click kiya fatak se 
         //deleteHandler call hua with uss todo ki id i.e. todo.id */}

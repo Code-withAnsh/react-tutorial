@@ -35,7 +35,7 @@ const Eventlist3 = () => {
     // apna para wala fn pass kar rha hai kyu na uss para wale fn ko btn me pass
     // kr de isliye wo wrapperhandler wla code commentout kar diya */}
     <button onClick = { ()=> handleparamclick('raat andheri hai , bhuj gye diye')}>Click(param)</button>
-    
+    <div>kya hai </div>
     </>
   )
 }
